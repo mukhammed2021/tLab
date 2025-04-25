@@ -7,9 +7,10 @@ import {
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from '../widgets/header';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideClientHydration(withEventReplay())],
   bootstrap: [AppComponent],
