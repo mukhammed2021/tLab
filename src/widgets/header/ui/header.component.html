@@ -1,30 +1,34 @@
 <header class="border-b border-[#e9eaed]">
   <div
-    class="container flex min-h-24 items-center justify-between py-1 text-base"
+    class="container flex min-h-24 items-center justify-between gap-4 py-1 text-base"
   >
     <a href="#">
       <img src="logo.svg" width="98" height="45" alt="tLab Technologies logo" />
     </a>
     <nav>
-      <ul class="flex items-center gap-x-12">
-        <li>
-          <a href="#">Продукты</a>
-        </li>
-        <li>
-          <a href="#">Ресурсы</a>
-        </li>
-        <li>
-          <a href="#">VirLab</a>
-        </li>
-        <li>
-          <a href="#">Обучение</a>
-        </li>
-        <li>
-          <a href="#">О компании</a>
-        </li>
+      <ul class="flex items-center gap-x-6 lg:gap-x-12">
+        @for (menuItem of menuList; track menuItem.title) {
+          <li
+            appHover
+            class="relative hover:after:absolute hover:after:top-6 hover:after:left-0 hover:after:inline-block hover:after:h-6 hover:after:w-full"
+          >
+            <a href="#">{{ menuItem.title }}</a>
+            @if (menuItem.subMenuList?.length) {
+              <ul
+                class="absolute top-12 left-0 hidden min-w-48 space-y-6 rounded-sm bg-white p-6 shadow-[0_1px_2px_0_rgba(190,190,206,0.08),0_6px_8px_0_rgba(190,190,206,0.12),0_16px_26px_0_rgba(190,190,206,0.2)]"
+              >
+                @for (subMenuItem of menuItem.subMenuList; track subMenuItem) {
+                  <li>
+                    <a appHighlight href="#">{{ subMenuItem }}</a>
+                  </li>
+                }
+              </ul>
+            }
+          </li>
+        }
       </ul>
     </nav>
-    <div class="flex items-center gap-x-[4.375rem]">
+    <div class="flex items-center gap-x-[2.1875rem] xl:gap-x-[4.375rem]">
       <div class="flex items-center gap-x-4 font-[Raleway] text-sm uppercase">
         <a href="#" class="font-semibold text-[#dc0023]">рус</a>
         <div class="h-6 w-0.5 bg-[#e9eaed]"></div>
