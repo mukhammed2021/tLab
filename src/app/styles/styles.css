@@ -17,3 +17,7 @@ body {
 .container {
   @apply mx-auto max-w-[87.625rem] px-[.9375rem];
 }
+
+.menu-open {
+  overflow: hidden;
+}
