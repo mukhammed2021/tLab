@@ -53,7 +53,7 @@
           >
             <button
               class="flex w-full items-center justify-between text-lg"
-              (click)="accordionItem.close()"
+              (click)="accordionItem.toggle()"
               tabindex="0"
               [attr.id]="'accordion-header-' + index"
               [attr.aria-expanded]="accordionItem.expanded"
