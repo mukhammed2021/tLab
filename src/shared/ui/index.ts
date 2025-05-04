@@ -1,2 +1,1 @@
-export { HighlightDirective } from './highlight.directive';
-export { HoverDirective } from "./hover.directive"
+export { UiKitModule } from './ui-kit.module';
