@@ -1,0 +1,15 @@
+.menu-open .icon-menu::before {
+  content: "";
+  width: 1.25rem;
+  rotate: -45deg;
+  top: calc(50% - 0.0625rem);
+}
+.menu-open .icon-menu::after {
+  content: "";
+  width: 1.25rem;
+  rotate: 45deg;
+  bottom: calc(50% - 0.0625rem);
+}
+.menu-open .icon-menu span {
+  width: 0;
+}

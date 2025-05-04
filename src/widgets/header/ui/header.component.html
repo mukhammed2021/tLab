@@ -1,21 +1,39 @@
 <header class="border-b border-[#e9eaed]">
   <div
-    class="container flex min-h-24 items-center justify-between gap-4 py-1 text-base"
+    class="container flex min-h-15.5 items-center justify-between gap-4 py-1 text-base min-[992px]:min-h-24"
   >
-    <a href="#">
+    <a href="#" class="max-[992px]:z-10">
       <img src="logo.svg" width="98" height="45" alt="tLab Technologies logo" />
     </a>
-    <nav>
-      <ul class="flex items-center gap-x-6 lg:gap-x-12">
+    <nav
+      [ngClass]="[
+        'max-[992px]:fixed max-[992px]:top-0 max-[992px]:h-full max-[992px]:overflow-auto max-[992px]:pt-15.5 max-[992px]:transition-all max-[992px]:duration-300 max-[992px]:after:transition-colors max-[992px]:after:duration-300',
+        doc.documentElement.classList.contains('menu-open')
+          ? 'max-[992px]:left-1/4 max-[992px]:w-3/4 max-[992px]:bg-white max-[992px]:before:fixed max-[992px]:before:top-0 max-[992px]:before:left-1/4 max-[992px]:before:h-15.5 max-[992px]:before:w-full max-[992px]:before:border-b max-[992px]:before:border-[#e9eaed] max-[992px]:before:bg-white max-[992px]:after:fixed max-[992px]:after:top-15.5 max-[992px]:after:left-0 max-[992px]:after:h-full max-[992px]:after:w-1/4 max-[992px]:after:bg-[#101c2c]/25'
+          : 'max-[992px]:left-full',
+      ]"
+    >
+      <ul
+        class="hidden min-[992px]:flex min-[992px]:items-center min-[992px]:gap-x-6 lg:gap-x-12"
+      >
         @for (menuItem of menuList; track menuItem.title) {
           <li
             appHover
             class="relative hover:after:absolute hover:after:top-6 hover:after:left-0 hover:after:inline-block hover:after:h-6 hover:after:w-full"
           >
-            <a href="#">{{ menuItem.title }}</a>
+            <div class="flex items-center justify-between">
+              <a href="#" class="text-lg min-[992px]:text-base">
+                {{ menuItem.title }}
+              </a>
+              <img
+                src="icons/open.svg"
+                alt="open icon"
+                class="min-[992px]:hidden"
+              />
+            </div>
             @if (menuItem.subMenuList?.length) {
               <ul
-                class="absolute top-12 left-0 hidden min-w-48 space-y-6 rounded-sm bg-white p-6 shadow-[0_1px_2px_0_rgba(190,190,206,0.08),0_6px_8px_0_rgba(190,190,206,0.12),0_16px_26px_0_rgba(190,190,206,0.2)]"
+                class="min-w-48 space-y-6 rounded-sm bg-white min-[992px]:absolute min-[992px]:top-12 min-[992px]:left-0 min-[992px]:hidden min-[992px]:p-6 min-[992px]:shadow-[0_1px_2px_0_rgba(190,190,206,0.08),0_6px_8px_0_rgba(190,190,206,0.12),0_16px_26px_0_rgba(190,190,206,0.2)]"
               >
                 @for (subMenuItem of menuItem.subMenuList; track subMenuItem) {
                   <li>
@@ -27,8 +45,59 @@
           </li>
         }
       </ul>
+      <cdk-accordion class="flex flex-col gap-y-4 p-4 min-[992px]:hidden">
+        @for (menuItem of menuList; track menuItem.title; let index = $index) {
+          <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            class="space-y-5"
+          >
+            <button
+              class="flex w-full items-center justify-between text-lg"
+              (click)="accordionItem.close()"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+            >
+              @if (!menuItem.subMenuList) {
+                <a href="#">{{ menuItem.title }}</a>
+              } @else {
+                {{ menuItem.title }}
+              }
+              @if (menuItem.subMenuList) {
+                <img
+                  [src]="
+                    accordionItem.expanded
+                      ? 'icons/close.svg'
+                      : 'icons/open.svg'
+                  "
+                  alt="open icon"
+                  class="min-[992px]:hidden"
+                />
+              }
+            </button>
+            @if (menuItem.subMenuList?.length && accordionItem.expanded) {
+              <ul
+                class="space-y-4.5 font-light"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index"
+              >
+                @for (subMenuItem of menuItem.subMenuList; track subMenuItem) {
+                  <li>
+                    <a appHighlight href="#">{{ subMenuItem }}</a>
+                  </li>
+                }
+              </ul>
+            }
+          </cdk-accordion-item>
+        }
+      </cdk-accordion>
     </nav>
-    <div class="flex items-center gap-x-[2.1875rem] xl:gap-x-[4.375rem]">
+    <div
+      class="hidden items-center gap-x-[2.1875rem] min-[992px]:flex xl:gap-x-[4.375rem]"
+    >
       <div class="flex items-center gap-x-4 font-[Raleway] text-sm uppercase">
         <a href="#" class="font-semibold text-[#dc0023]">рус</a>
         <div class="h-6 w-0.5 bg-[#e9eaed]"></div>
@@ -41,5 +110,13 @@
         +7 (705) 844-00-06
       </a>
     </div>
+    <button
+      (click)="toggleMenu()"
+      class="icon-menu relative inline-flex size-11 items-center justify-center before:absolute before:top-[1.0625rem] before:left-3 before:h-0.5 before:w-5 before:rounded-full before:bg-[#101C2C] before:transition-all before:duration-300 after:absolute after:bottom-[1.0625rem] after:left-3 after:h-0.5 after:w-5 after:rounded-full after:bg-[#101C2C] after:transition-all after:duration-300 min-[992px]:hidden"
+    >
+      <span
+        class="h-0.5 w-5 rounded-full bg-[#101C2C] transition-all duration-300"
+      ></span>
+    </button>
   </div>
 </header>
