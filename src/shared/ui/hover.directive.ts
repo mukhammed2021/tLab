@@ -16,7 +16,8 @@ export class HoverDirective {
   }
 
   private hover(appearance: string) {
-    this.el.nativeElement.lastElementChild.nodeName === 'UL'
+    this.el.nativeElement.lastElementChild.nodeName === 'UL' &&
+    window.matchMedia('(min-width: 992px)').matches
       ? (this.el.nativeElement.lastElementChild.style.display = appearance)
       : null;
   }
