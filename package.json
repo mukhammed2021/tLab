@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-en": "ng serve --configuration=dev-en --port 4201",
+    "start-en": "ng serve --configuration=en --port 4201",
     "build": "ng build",
-    "build-en": "ng build --configuration=production,prod-en",
+    "build-en": "ng build --configuration=production,en",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:tlab": "node dist/tlab/server/server.mjs"

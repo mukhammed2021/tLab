@@ -52,13 +52,10 @@
             }
           },
           "configurations": {
-            "dev-en": {
-              "i18nMissingTranslation": "error",
-              "localize": ["en-US"]
-            },
-            "prod-en": {
+            "en": {
               "outputPath": "dist/tlab/",
               "i18nMissingTranslation": "error",
+              "baseHref": "/en/",
               "localize": ["en-US"]
             },
             "production": {
@@ -87,8 +84,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "dev-en": {
-              "buildTarget": "tlab:build:development,dev-en"
+            "en": {
+              "buildTarget": "tlab:build:development,en"
             },
             "production": {
               "buildTarget": "tlab:build:production"
