@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="ru" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="tlabTechnologiesLogo" datatype="html">
+        <source>Логотип tLab Technologies</source>
+        <target>tLab Technologies logo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/widgets/header/ui/header.component.html</context>
+          <context context-type="linenumber">11,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="products" datatype="html">
+        <source>Продукты</source>
+        <target>Products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/widgets/header/ui/header.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

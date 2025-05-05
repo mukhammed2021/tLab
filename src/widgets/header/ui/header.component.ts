@@ -13,7 +13,7 @@ export class HeaderComponent {
 
   public menuList = [
     {
-      title: 'Продукты',
+      title: $localize`:@@products:Продукты`,
       subMenuList: ['tLab', 'tMail (скоро)'],
     },
     {

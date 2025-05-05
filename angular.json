@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "tlab": {
+      "i18n": {
+        "sourceLocale": "ru",
+        "locales": {
+          "en-US": "src/shared/i18n/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,12 +29,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tlab",
+            "outputPath": "dist/tlab/ru",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -48,6 +52,15 @@
             }
           },
           "configurations": {
+            "dev-en": {
+              "i18nMissingTranslation": "error",
+              "localize": ["en-US"]
+            },
+            "prod-en": {
+              "outputPath": "dist/tlab/",
+              "i18nMissingTranslation": "error",
+              "localize": ["en-US"]
+            },
             "production": {
               "budgets": [
                 {
@@ -74,6 +87,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "dev-en": {
+              "buildTarget": "tlab:build:development,dev-en"
+            },
             "production": {
               "buildTarget": "tlab:build:production"
             },
@@ -91,7 +107,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
