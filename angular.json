@@ -54,13 +54,11 @@
           },
           "configurations": {
             "ru": {
-              "outputPath": "dist/tlab/",
               "i18nMissingTranslation": "error",
               "baseHref": "/ru/",
               "localize": ["ru"]
             },
             "en": {
-              "outputPath": "dist/tlab/en",
               "i18nMissingTranslation": "error",
               "baseHref": "/en/",
               "localize": ["en-US"]
