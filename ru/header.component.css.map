@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/widgets/header/ui/header.component.css"],
+  "sourcesContent": [".menu-open .icon-menu::before {\r\n  content: \"\";\r\n  width: 1.25rem;\r\n  rotate: -45deg;\r\n  top: calc(50% - 0.0625rem);\r\n}\r\n.menu-open .icon-menu::after {\r\n  content: \"\";\r\n  width: 1.25rem;\r\n  rotate: 45deg;\r\n  bottom: calc(50% - 0.0625rem);\r\n}\r\n.menu-open .icon-menu span {\r\n  width: 0;\r\n}\r\n"],
+  "mappings": ";AAAA,CAAA,UAAA,CAAA,SAAA;AACE,WAAA;AACA,SAAA;AACA,UAAA;AACA,OAAA,KAAA,IAAA,EAAA;AACF;AACA,CANA,UAMA,CANA,SAMA;AACE,WAAA;AACA,SAAA;AACA,UAAA;AACA,UAAA,KAAA,IAAA,EAAA;AACF;AACA,CAZA,UAYA,CAZA,UAYA;AACE,SAAA;AACF;",
+  "names": []
+}
