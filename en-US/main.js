@@ -40321,7 +40321,7 @@ var HeaderComponent = class _HeaderComponent {
     this.doc = doc;
   }
   menuList = [{
-    title: "\u041F\u0440\u043E\u0434\u0443\u043A\u0442\u044B",
+    title: "Products",
     subMenuList: ["tLab", "tMail (\u0441\u043A\u043E\u0440\u043E)"]
   }, {
     title: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B",
@@ -40353,7 +40353,7 @@ var HeaderComponent = class _HeaderComponent {
         const MSG_EXTERNAL_tlabTechnologiesLogo$$SRC_WIDGETS_HEADER_UI_HEADER_COMPONENT_TS_0 = goog.getMsg("\u041B\u043E\u0433\u043E\u0442\u0438\u043F tLab Technologies");
         i18n_0 = MSG_EXTERNAL_tlabTechnologiesLogo$$SRC_WIDGETS_HEADER_UI_HEADER_COMPONENT_TS_0;
       } else {
-        i18n_0 = "\u041B\u043E\u0433\u043E\u0442\u0438\u043F tLab Technologies";
+        i18n_0 = "tLab Technologies logo";
       }
       return [["accordionItem", "cdkAccordionItem"], [1, "border-b", "border-[#e9eaed]"], [1, "container", "flex", "min-h-15.5", "items-center", "justify-between", "gap-4", "py-1", "text-base", "min-[992px]:min-h-24"], ["href", "#", 1, "max-[992px]:z-10"], ["src", "logo.svg", "width", "98", "height", "45", "alt", i18n_0], [3, "ngClass"], [1, "hidden", "min-[992px]:flex", "min-[992px]:items-center", "min-[992px]:gap-x-6", "lg:gap-x-12"], ["appHover", "", 1, "relative", "hover:after:absolute", "hover:after:top-6", "hover:after:left-0", "hover:after:inline-block", "hover:after:h-6", "hover:after:w-full"], [1, "flex", "flex-col", "gap-y-4", "p-4", "min-[992px]:hidden"], [1, "space-y-5"], [1, "hidden", "items-center", "gap-x-[2.1875rem]", "min-[992px]:flex", "xl:gap-x-[4.375rem]"], [1, "flex", "items-center", "gap-x-4", "font-[Raleway]", "text-sm", "uppercase"], ["href", "#", 1, "font-semibold", "text-[#dc0023]"], [1, "h-6", "w-0.5", "bg-[#e9eaed]"], ["href", "#"], ["href", "tel:+77058440006", 1, "flex", "items-center", "gap-2.5", "font-medium", "text-[#101c2c]", "before:size-6", "before:bg-[url(/icons/phone.svg)]"], [1, "icon-menu", "relative", "inline-flex", "size-11", "items-center", "justify-center", "before:absolute", "before:top-[1.0625rem]", "before:left-3", "before:h-0.5", "before:w-5", "before:rounded-full", "before:bg-[#101C2C]", "before:transition-all", "before:duration-300", "after:absolute", "after:bottom-[1.0625rem]", "after:left-3", "after:h-0.5", "after:w-5", "after:rounded-full", "after:bg-[#101C2C]", "after:transition-all", "after:duration-300", "min-[992px]:hidden", 3, "click"], [1, "h-0.5", "w-5", "rounded-full", "bg-[#101C2C]", "transition-all", "duration-300"], ["href", "#", 1, "text-lg", "min-[992px]:text-base"], [1, "min-w-48", "space-y-6", "rounded-sm", "bg-white", "min-[992px]:absolute", "min-[992px]:top-12", "min-[992px]:left-0", "min-[992px]:hidden", "min-[992px]:p-6", "min-[992px]:shadow-[0_1px_2px_0_rgba(190,190,206,0.08),0_6px_8px_0_rgba(190,190,206,0.12),0_16px_26px_0_rgba(190,190,206,0.2)]"], ["appHighlight", "", "href", "#"], ["tabindex", "0", 1, "flex", "w-full", "items-center", "justify-between", "text-lg", 3, "click"], [1, "min-[992px]:hidden", 3, "src", "alt"], ["role", "region", 1, "space-y-4.5", "font-light", 3, "display"], ["role", "region", 1, "space-y-4.5", "font-light"]];
     },
@@ -40874,5 +40874,5 @@ platformBrowser().bootstrapModule(AppModule, {
    * License: MIT
    *)
 */
-/**i18n:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855*/
+/**i18n:85c6e8f0fda37acb7348706ef0d9df9c63be3c0063f35c3aba412113dec5268e*/
 //# sourceMappingURL=main.js.map
