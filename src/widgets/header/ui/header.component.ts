@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, LOCALE_ID, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +9,20 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
-  constructor(@Inject(DOCUMENT) public doc: Document) {}
-
+  constructor(
+    @Inject(DOCUMENT) public doc: Document,
+    @Inject(LOCALE_ID) public currentLocale: string,
+  ) {}
+  public locales = [
+    {
+      localeCode: 'ru',
+      label: 'рус',
+    },
+    {
+      localeCode: 'en-US',
+      label: 'eng',
+    },
+  ];
   public menuList = [
     {
       title: $localize`:@@products:Продукты`,
