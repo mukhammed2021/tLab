@@ -6,8 +6,7 @@
     "start": "ng serve",
     "start-en": "ng serve --configuration=en",
     "start-ru": "ng serve --configuration=ru",
-    "build-en": "ng build --configuration=production,en",
-    "build-ru": "ng build --configuration=production,ru",
+    "build": "ng build --localize",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:tlab": "node dist/tlab/server/server.mjs"

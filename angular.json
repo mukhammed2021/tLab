@@ -29,7 +29,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tlab/ru",
+            "localize": ["en-US"],
+            "outputPath": "dist/tlab",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js", "@angular/localize/init"],
