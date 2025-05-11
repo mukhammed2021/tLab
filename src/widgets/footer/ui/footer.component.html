@@ -1,1 +1,217 @@
-<p>footer works!</p>
+<footer class="border-t border-t-[#e9eaed] pt-19">
+  <div class="relative container">
+    <h2
+      class="mb-13.5 font-[Raleway] text-[2.625rem] font-extrabold text-[#101c2c]"
+    >
+      Контакты
+    </h2>
+    <div class="mb-9.5 grid grid-cols-4 border-b border-b-[#e9eaed] pb-12">
+      <div class="grid gap-6">
+        <h3
+          class="flex flex-col-reverse gap-y-3.5 font-[Raleway] text-[#101c2c] before:h-1 before:w-9.5 before:bg-[url(/icons/devider.svg)]"
+        >
+          <div class="font-light">
+            Время <span class="font-extrabold">работы</span>
+          </div>
+        </h3>
+        <div class="grid">
+          <div
+            class="flex items-center gap-4 text-base before:size-6 before:bg-[url(/icons/time.svg)]"
+          >
+            <p>
+              Пн - Пт с <time datetime="10:00">10:00</time> до
+              <time datetime="19:00">19:00</time>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid gap-6">
+        <h3
+          class="flex flex-col-reverse gap-y-3.5 font-[Raleway] text-[#101c2c] before:h-1 before:w-9.5 before:bg-[url(/icons/devider.svg)]"
+        >
+          <div class="font-light">
+            Где мы <span class="font-extrabold">находимся:</span>
+          </div>
+        </h3>
+        <div class="grid">
+          <address
+            class="flex items-center gap-4 text-base not-italic before:size-6 before:bg-[url(/icons/location.svg)]"
+          >
+            Казахстан, Астана, ул. Алпамыс 17
+          </address>
+        </div>
+      </div>
+      <div class="grid gap-6">
+        <h3
+          class="flex flex-col-reverse gap-y-3.5 font-[Raleway] text-[#101c2c] before:h-1 before:w-9.5 before:bg-[url(/icons/devider.svg)]"
+        >
+          <div class="font-light">
+            <span class="font-extrabold">Телефоны:</span>
+          </div>
+        </h3>
+        <div class="grid">
+          <address
+            class="flex items-center gap-4 text-base not-italic before:size-6 before:bg-[url(/icons/phone.svg)]"
+          >
+            <a href="tel:+77058440006">+7 (705) 844-00-06</a>
+          </address>
+        </div>
+      </div>
+      <div class="grid gap-6">
+        <h3
+          class="flex flex-col-reverse gap-y-3.5 font-[Raleway] text-[#101c2c] before:h-1 before:w-9.5 before:bg-[url(/icons/devider.svg)]"
+        >
+          <div class="font-light">
+            Электронная
+            <span class="font-extrabold">почта:</span>
+          </div>
+        </h3>
+        <div class="grid">
+          <address
+            class="flex items-center gap-4 text-base not-italic before:size-6 before:bg-[url(/icons/mail.svg)]"
+          >
+            <a href="mailto:info@tlab.kz">info&#64;tlab.kz</a>
+          </address>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-4 items-start border-b border-b-[#e9eaed] pb-12">
+      <a href="#" class="justify-self-start">
+        <img
+          src="logo.svg"
+          width="98"
+          height="45"
+          i18n-alt="@@tlabTechnologiesLogo"
+          alt="Логотип tLab Technologies"
+        />
+      </a>
+      <div>
+        <h4 class="mb-[.9375rem] text-sm font-medium text-[#101c2c]">
+          Мы и Наши продукты
+        </h4>
+        <ul class="grid gap-y-[.9375rem] text-sm font-light">
+          <li>
+            <a href="#">О компании</a>
+          </li>
+          <li>
+            <a href="#">tLab</a>
+          </li>
+          <li>
+            <a href="#">tMail (coming soon)</a>
+          </li>
+          <li>
+            <a href="#">OmniConsole (coming soon)</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="mb-[.9375rem] text-sm font-medium text-[#101c2c]">
+          Обучение
+        </h4>
+        <ul class="grid gap-y-[.9375rem] text-sm font-light">
+          <li>
+            <a href="#">Курсы</a>
+          </li>
+          <li>
+            <a href="#">Учебное пособие</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex justify-between">
+        <div>
+          <h4 class="mb-[.9375rem] text-sm font-medium text-[#101c2c]">
+            Ресурсы
+          </h4>
+          <ul class="grid gap-y-[.9375rem] text-sm font-light">
+            <li>
+              <a href="#">Исследования</a>
+            </li>
+            <li>
+              <a href="#">Новости и пресса</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="flex">
+          <li>
+            <a href="#">
+              <svg-icon
+                src="icons/social/x.svg"
+                [svgStyle]="{ 'width.px': 32, 'height.px': 32 }"
+                class="transition-colors duration-300 hover:text-[#e90000]"
+              >
+              </svg-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg-icon
+                src="icons/social/instagram.svg"
+                [svgStyle]="{ 'width.px': 32, 'height.px': 32 }"
+                class="transition-colors duration-300 hover:text-[#e90000]"
+              >
+              </svg-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/tlabtech/posts/?feedView=all"
+            >
+              <svg-icon
+                src="icons/social/linkedin.svg"
+                [svgStyle]="{ 'width.px': 32, 'height.px': 32 }"
+                class="transition-colors duration-300 hover:text-[#e90000]"
+              >
+              </svg-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="py-4 text-sm font-light">
+      tLab Technologies &copy;{{ year }}. All Rights Reserved.
+    </div>
+    <div
+      class="absolute bottom-[15.9375rem] -left-[32.75rem] flex items-center"
+    >
+      <div class="dashed-line"></div>
+      <svg-icon
+        src="icons/hexagon.svg"
+        [svgStyle]="{ 'width.px': 14, 'height.px': 14 }"
+        class="hexagon rotate-45 text-[#ff0149]"
+      >
+      </svg-icon>
+    </div>
+    <div class="absolute bottom-[8.5rem] -left-[22.75rem] flex items-center">
+      <div class="dashed-line"></div>
+      <svg-icon
+        src="icons/hexagon.svg"
+        [svgStyle]="{ 'width.px': 14, 'height.px': 14 }"
+        class="hexagon rotate-45 text-[#ff0149]"
+      >
+      </svg-icon>
+    </div>
+    <div
+      class="absolute top-[5.75rem] -right-[22.75rem] flex rotate-180 items-center"
+    >
+      <div class="dashed-line"></div>
+      <svg-icon
+        src="icons/hexagon.svg"
+        [svgStyle]="{ 'width.px': 14, 'height.px': 14 }"
+        class="hexagon rotate-45 text-[#ff0149]"
+      >
+      </svg-icon>
+    </div>
+    <div
+      class="absolute top-[13.625rem] -right-[33.375rem] flex rotate-180 items-center"
+    >
+      <div class="dashed-line"></div>
+      <svg-icon
+        src="icons/hexagon.svg"
+        [svgStyle]="{ 'width.px': 14, 'height.px': 14 }"
+        class="hexagon rotate-45 text-[#ff0149]"
+      >
+      </svg-icon>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+.hexagon {
+  filter: drop-shadow(0 0.1875rem 0.5rem #ffbeca);
+}
+
+.dashed-line {
+  background:
+    linear-gradient(to right, transparent 50%, white 50%),
+    linear-gradient(to right, transparent 0%, #ff0049);
+  background-size:
+    1rem 0.125rem,
+    100% 0.125rem;
+  height: 0.0625rem;
+  width: 23.75rem;
+}
