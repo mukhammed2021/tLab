@@ -4,6 +4,8 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +15,13 @@ import { UiKitModule } from '../shared/ui';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, UiKitModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    UiKitModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
+  ],
   providers: [provideClientHydration(withEventReplay())],
   bootstrap: [AppComponent],
 })
