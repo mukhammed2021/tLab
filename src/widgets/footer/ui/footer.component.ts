@@ -8,38 +8,4 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   public year = new Date().getFullYear();
-
-  public footerNav = [
-    {
-      title: 'Мы и Наши продукты',
-      list: [
-        'О компании',
-        'tLab',
-        'tMail (coming soon)',
-        'OmniConsole (coming soon)',
-      ],
-    },
-    {
-      title: 'Обучение',
-      list: ['Курсы', 'Учебное пособие'],
-    },
-    {
-      title: 'Ресурсы',
-      list: ['Исследования', 'Новости и пресса'],
-      social: [
-        {
-          icon: 'icons/social/x.svg',
-          link: '#',
-        },
-        {
-          icon: 'icons/social/instagram.svg',
-          link: '#',
-        },
-        {
-          icon: 'icons/social/linkedin.svg',
-          link: 'https://www.linkedin.com/company/tlabtech/posts/?feedView=all',
-        },
-      ],
-    },
-  ];
 }
