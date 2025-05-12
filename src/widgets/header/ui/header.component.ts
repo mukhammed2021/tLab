@@ -42,6 +42,7 @@ export class HeaderComponent {
     },
     {
       title: 'О компании',
+      page: "/about"
     },
   ];
   public toggleMenu() {

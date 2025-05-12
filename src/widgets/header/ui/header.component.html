@@ -27,7 +27,10 @@
             appHover
             class="relative hover:after:absolute hover:after:top-6 hover:after:left-0 hover:after:inline-block hover:after:h-6 hover:after:w-full"
           >
-            <a href="#" class="text-lg min-[992px]:text-base">
+            <a
+              [routerLink]="menuItem.page"
+              class="text-lg min-[992px]:text-base"
+            >
               {{ menuItem.title }}
             </a>
             @if (menuItem.subMenuList?.length) {
