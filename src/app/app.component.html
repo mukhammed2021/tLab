@@ -1,7 +1,31 @@
 <div class="wrapper">
-  <app-header />
-  <main>
-    <router-outlet />
-  </main>
-  <app-footer />
+  <app-header [snav]="snav" />
+  <mat-sidenav-container class="flex-1 !bg-transparent !text-inherit">
+    <mat-sidenav
+      #snav
+      [mode]="isMobile() ? 'over' : 'side'"
+      [fixedInViewport]="isMobile()"
+      fixedTopGap="63"
+      position="end"
+      class="!w-3/4 !rounded-none !bg-white !text-inherit"
+    >
+      <ul>
+        <li>assa</li>
+        <li>assa</li>
+        <li>assa</li>
+        <li>assa</li>
+      </ul>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="bg-white">
+      <div
+        class="flex min-h-svh flex-col overflow-hidden supports-[overflow:clip]:overflow-clip"
+      >
+        <main class="grow">
+          <router-outlet />
+        </main>
+        <app-footer />
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
