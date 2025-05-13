@@ -36,7 +36,7 @@ svg * {
 }
 
 .wrapper {
-  @apply flex min-h-full flex-col overflow-hidden supports-[overflow:clip]:overflow-clip [&>main]:grow;
+  @apply flex min-h-full flex-col;
 }
 
 .container {
@@ -45,4 +45,8 @@ svg * {
 
 .menu-open {
   overflow: hidden;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(16, 28, 44, 0.25) !important;
 }
