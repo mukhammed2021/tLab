@@ -1,4 +1,6 @@
-<header class="border-b border-[#e9eaed]">
+<header
+  class="fixed top-0 left-0 z-2 w-full border-b border-b-[#e9eaed] bg-white"
+>
   <div
     class="container flex min-h-15.5 items-center justify-between gap-4 py-1 text-base min-[992px]:min-h-24"
   >
@@ -11,16 +13,9 @@
         alt="Логотип tLab Technologies"
       />
     </a>
-    <nav
-      [ngClass]="[
-        'max-[992px]:fixed max-[992px]:top-0 max-[992px]:h-full max-[992px]:overflow-auto max-[992px]:pt-15.5 max-[992px]:transition-all max-[992px]:duration-300 max-[992px]:after:transition-colors max-[992px]:after:duration-300',
-        doc.documentElement.classList.contains('menu-open')
-          ? 'max-[992px]:left-1/4 max-[992px]:w-3/4 max-[992px]:bg-white max-[992px]:before:fixed max-[992px]:before:top-0 max-[992px]:before:left-1/4 max-[992px]:before:h-15.5 max-[992px]:before:w-full max-[992px]:before:border-b max-[992px]:before:border-[#e9eaed] max-[992px]:before:bg-white max-[992px]:after:fixed max-[992px]:after:top-15.5 max-[992px]:after:left-0 max-[992px]:after:h-full max-[992px]:after:w-1/4 max-[992px]:after:bg-[#101c2c]/25'
-          : 'max-[992px]:left-full',
-      ]"
-    >
+    <nav class="hidden min-[992px]:block">
       <ul
-        class="hidden min-[992px]:flex min-[992px]:items-center min-[992px]:gap-x-6 lg:gap-x-12"
+        class="min-[992px]:flex min-[992px]:items-center min-[992px]:gap-x-6 lg:gap-x-12"
       >
         @for (menuItem of menuList; track menuItem.title) {
           <li
@@ -47,55 +42,6 @@
           </li>
         }
       </ul>
-      <cdk-accordion class="flex flex-col gap-y-4 p-4 min-[992px]:hidden">
-        @for (menuItem of menuList; track menuItem.title; let index = $index) {
-          <cdk-accordion-item
-            #accordionItem="cdkAccordionItem"
-            class="space-y-5"
-          >
-            <button
-              class="flex w-full items-center justify-between text-lg"
-              (click)="accordionItem.toggle()"
-              tabindex="0"
-              [attr.id]="'accordion-header-' + index"
-              [attr.aria-expanded]="accordionItem.expanded"
-              [attr.aria-controls]="'accordion-body-' + index"
-            >
-              @if (!menuItem.subMenuList) {
-                <a href="#">{{ menuItem.title }}</a>
-              } @else {
-                {{ menuItem.title }}
-              }
-              @if (menuItem.subMenuList) {
-                <img
-                  [src]="
-                    accordionItem.expanded
-                      ? 'icons/close.svg'
-                      : 'icons/open.svg'
-                  "
-                  [alt]="accordionItem.expanded ? 'свернуть' : 'развернуть'"
-                  class="min-[992px]:hidden"
-                />
-              }
-            </button>
-            @if (menuItem.subMenuList?.length && accordionItem.expanded) {
-              <ul
-                class="space-y-4.5 font-light"
-                role="region"
-                [style.display]="accordionItem.expanded ? '' : 'none'"
-                [attr.id]="'accordion-body-' + index"
-                [attr.aria-labelledby]="'accordion-header-' + index"
-              >
-                @for (subMenuItem of menuItem.subMenuList; track subMenuItem) {
-                  <li>
-                    <a appHighlight href="#">{{ subMenuItem }}</a>
-                  </li>
-                }
-              </ul>
-            }
-          </cdk-accordion-item>
-        }
-      </cdk-accordion>
     </nav>
     <div
       class="hidden items-center gap-x-[2.1875rem] min-[992px]:flex xl:gap-x-[4.375rem]"
@@ -124,8 +70,10 @@
       </a>
     </div>
     <button
-      (click)="toggleMenu()"
-      class="icon-menu relative inline-flex size-11 items-center justify-center before:absolute before:top-[1.0625rem] before:left-3 before:h-0.5 before:w-5 before:rounded-full before:bg-[#101C2C] before:transition-all before:duration-300 after:absolute after:bottom-[1.0625rem] after:left-3 after:h-0.5 after:w-5 after:rounded-full after:bg-[#101C2C] after:transition-all after:duration-300 min-[992px]:hidden"
+      (click)="snav.toggle()"
+      [ngClass]="[
+        'icon-menu relative inline-flex size-11 items-center justify-center before:absolute before:top-[1.0625rem] before:left-3 before:h-0.5 before:w-5 before:rounded-full before:bg-[#101C2C] before:transition-all before:duration-300 after:absolute after:bottom-[1.0625rem] after:left-3 after:h-0.5 after:w-5 after:rounded-full after:bg-[#101C2C] after:transition-all after:duration-300 min-[992px]:hidden',
+      ]"
     >
       <span
         class="h-0.5 w-5 rounded-full bg-[#101C2C] transition-all duration-300"

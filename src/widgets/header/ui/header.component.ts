@@ -1,5 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, LOCALE_ID, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  LOCALE_ID,
+  ViewEncapsulation,
+} from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +16,8 @@ import { Component, Inject, LOCALE_ID, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
+  @Input() snav!: MatSidenav;
+
   constructor(
     @Inject(DOCUMENT) public doc: Document,
     @Inject(LOCALE_ID) public currentLocale: string,
@@ -42,10 +51,10 @@ export class HeaderComponent {
     },
     {
       title: 'О компании',
-      page: "/about"
+      page: '/about',
     },
   ];
   public toggleMenu() {
-    this.doc.documentElement.classList.toggle('menu-open');
+    // this.doc.documentElement.classList.toggle('menu-open');
   }
 }
