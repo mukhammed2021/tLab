@@ -1,0 +1,68 @@
+.menu {
+  --width: 1.25rem;
+  --barHeight: 0.0625rem;
+  --barColor: #101c2c;
+
+  width: 2.75rem;
+  height: 2.75rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu .menu__inner {
+  position: absolute;
+  width: 1.25rem;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border: var(--barHeight) solid var(--barColor);
+  transition: border-color 0.2s ease-in 0.2s;
+  border-radius: 2px;
+}
+
+.menu .menu__inner::before {
+  content: "";
+  position: absolute;
+  top: -0.375rem;
+  left: -0.0625rem;
+  width: 1.25rem;
+  border: var(--barHeight) solid var(--barColor);
+  transition:
+    top 0.2s ease-in 0.3s,
+    transform ease-in 0.2s;
+  border-radius: 2px;
+}
+
+.menu .menu__inner::after {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: -0.0625rem;
+  width: 1.25rem;
+  border: var(--barHeight) solid var(--barColor);
+  transition:
+    top 0.2s ease-in 0.3s,
+    transform ease-in 0.2s;
+  border-radius: 2px;
+}
+
+.menu.active .menu__inner {
+  border-color: transparent;
+  transition: border-color ease-in 0.1s;
+}
+
+.menu.active .menu__inner::before {
+  top: -0.0625rem;
+  transform: rotate(-45deg);
+  transition:
+    top ease-out 0.2s,
+    transform 0.2s ease-out 0.3s;
+}
+
+.menu.active .menu__inner::after {
+  top: -0.0625rem;
+  transform: rotate(45deg);
+  transition:
+    top ease-out 0.2s,
+    transform 0.2s ease-out 0.3s;
+}
